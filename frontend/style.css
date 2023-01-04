@@ -12,6 +12,9 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+
+/* navigation */
+
 .site-navigation {
     position: fixed;
     background-color: var(--main-color);
@@ -54,6 +57,8 @@
     height: 70px;
 }
 
+/* layout */
+
 body {
     padding-top: 70px;
     display: grid;
@@ -75,6 +80,8 @@ section {
     overflow: scroll;
     height: 90vh;
 }
+
+/* app part switcher */
 
 .app-sections-list {
     list-style: none;
@@ -105,4 +112,10 @@ section {
 .app-section-link:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+
+/* app */
+
+#app {
+    margin: 2rem;
 }
