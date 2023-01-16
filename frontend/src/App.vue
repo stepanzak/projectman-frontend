@@ -1,21 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Navigation />
+  <Sidebar />
+  <MainApp />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navigation from './components/Navigation.vue'
+import Sidebar from './components/Sidebar.vue'
+import MainApp from './components/MainApp.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navigation,
+    Sidebar,
+    MainApp
   }
 }
 </script>
 
 <style>
 #app {
-  
+  padding-top: 70px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas: "aside section";
 }
 </style>
