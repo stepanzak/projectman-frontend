@@ -1,15 +1,20 @@
 <template>
-    <div class="main-app">G</div>
+  <div class="main-appp">{{ currentCount }}</div>
 </template>
 
 <script>
 export default {
-    name: 'MainApp'
-}
+  name: "MainApp",
+  computed: {
+    currentCount() {
+      return this.$store.getters.getCurrentPage;
+    },
+  },
+};
 </script>
 
 <style>
-.main-app {
+.main-appp {
     padding: 1rem;
     grid-area: section;
     overflow: scroll;

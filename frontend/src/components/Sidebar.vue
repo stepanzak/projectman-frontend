@@ -1,9 +1,9 @@
 <template>
     <aside class="sidebar">
         <ul class="app-sections-list">
-            <li class="app-section-link">Náklady</li>
-            <li class="app-section-link">Úkoly</li>
-            <li class="app-section-link">Lidé</li>
+            <li class="app-section-link" @click="setPageTo('Naklady')">Náklady</li>
+            <li class="app-section-link" @click="setPageTo('Ukoly')">Úkoly</li>
+            <li class="app-section-link" @click="setPageTo('Lide')">Lidé</li>
         </ul>
     </aside>
 
@@ -11,7 +11,13 @@
 
 <script>
     export default {
-        name: 'Sidebar'
+        name: 'Sidebar',
+
+        methods: {
+            setPageTo: function(page) {
+                this.$store.commit('changePage', page)
+            }
+        }
     }
 </script>
 

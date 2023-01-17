@@ -11,6 +11,7 @@ import MainApp from './components/MainApp.vue'
 
 export default {
   name: 'App',
+
   components: {
     Navigation,
     Sidebar,
