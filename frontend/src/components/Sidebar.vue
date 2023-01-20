@@ -10,15 +10,15 @@
 </template>
 
 <script>
-    export default {
-        name: 'Sidebar',
+export default {
+    name: 'Sidebar',
 
-        methods: {
-            setPageTo: function(page) {
-                this.$store.commit('changePage', page)
-            }
+    methods: {
+        setPageTo: function (page) {
+            this.$store.commit('changePage', page)
         }
     }
+}
 </script>
 
 <style>
@@ -28,6 +28,7 @@
     height: 90vh;
     background-color: var(--main-color-darker);
 }
+
 .app-sections-list {
     list-style: none;
 }
@@ -39,6 +40,10 @@
     padding: 5px;
     background-color: var(--main-color-lighter);
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .app-section-link::before {
@@ -52,10 +57,10 @@
     transform-origin: right;
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
-  }
+}
 
 .app-section-link:hover::before {
-  transform-origin: left;
-  transform: scaleX(1);
+    transform-origin: left;
+    transform: scaleX(1);
 }
 </style>

@@ -3,7 +3,7 @@ import { createStore } from "vuex"
 export default createStore({
     state () {
         return {
-            page: 'Chleba'
+            page: 'Naklady'
         }
     },
 

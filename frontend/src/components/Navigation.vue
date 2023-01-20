@@ -46,6 +46,10 @@ export default {
     padding-top: 25px;
     color: black;
     text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .nav-btn:hover {
