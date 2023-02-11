@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import Navigation from './components/Navigation.vue'
-import Sidebar from './components/Sidebar.vue'
-import MainApp from './components/MainApp.vue'
+import Navigation from '@/components/Navigation.vue'
+import Sidebar from '@/components/Sidebar.vue'
+import MainApp from '@/components/MainApp.vue'
 
 export default {
   name: 'App',

@@ -25,7 +25,6 @@ export default {
 .sidebar {
     grid-area: aside;
     border-right: 5px solid black;
-    height: 90vh;
     background-color: var(--main-color-darker);
 }
 
