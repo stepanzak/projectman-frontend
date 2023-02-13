@@ -1,24 +1,6 @@
-# frontend
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# ProjectMan
+## frontend
+This is a frontend for ProjectMan.\
+ProjectMan stands for Project Managment and is an app I am building primarilly for my dad.\
+My dad needs a managment app for his building projects, so I am creating this.\
+This frontend is built with Javascript,HTML,CSS and Vue.js.
