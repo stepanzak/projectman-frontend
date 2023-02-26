@@ -13,7 +13,11 @@
     <div class="toolbar-section">
       <NakladyToolbar v-if="currentPage === 'Naklady'" />
       <UkolyToolbar v-if="currentPage === 'Ukoly'" />
+      <PraceToolbar v-if="currentPage === 'Prace'" />
+      <ProjektyToolbar v-if="currentPage === 'Projekty'" />
+      <ZakazniciToolbar v-if="currentPage === 'Zakaznici'" />
       <LideToolbar v-if="currentPage === 'Lide'" />
+      
     </div>
   </div>
 </template>
@@ -22,9 +26,15 @@
 import NakladyPage from '@/components/pages/naklady/NakladyPage.vue'
 import UkolyPage from '@/components/pages/ukoly/UkolyPage.vue'
 import LidePage from '@/components/pages/lide/LidePage.vue'
+import PracePage from '@/components/pages/prace/PracePage.vue'
+import ProjektyPage from '@/components/pages/projekty/ProjektyPage.vue'
+import ZakazniciPage from '@/components/pages/zakaznici/ZakazniciPage.vue'
 
 import NakladyToolbar from '@/components/pages/naklady/NakladyToolbar.vue'
 import UkolyToolbar from '@/components/pages/ukoly/UkolyToolbar.vue'
+import PraceToolbar from '@/components/pages/prace/PraceToolbar.vue'
+import ProjektyToolbar from '@/components/pages/projekty/ProjektyToolbar.vue'
+import ZakazniciToolbar from '@/components/pages/zakaznici/ZakazniciToolbar.vue'
 import LideToolbar from '@/components/pages/lide/LideToolbar.vue'
 
 
@@ -41,7 +51,13 @@ export default {
     LidePage,
     NakladyToolbar,
     UkolyToolbar,
-    LideToolbar
+    LideToolbar,
+    PracePage,
+    ProjektyPage,
+    ZakazniciPage,
+    PraceToolbar,
+    ProjektyToolbar,
+    ZakazniciToolbar
   }
 };
 </script>
