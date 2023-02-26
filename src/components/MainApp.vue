@@ -4,6 +4,10 @@
       <NakladyPage v-if="currentPage === 'Naklady'" />
       <UkolyPage v-if="currentPage === 'Ukoly'" />
       <LidePage v-if="currentPage === 'Lide'" />
+      <PracePage v-if="currentPage === 'Prace'" />
+      <ProjektyPage v-if="currentPage === 'Projekty'" />
+      <ZakazniciPage v-if="currentPage === 'Zakaznici'" />
+      
     </div>
 
     <div class="toolbar-section">

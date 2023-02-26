@@ -4,6 +4,9 @@
             <li class="app-section-link" @click="setPageTo('Naklady')">Náklady</li>
             <li class="app-section-link" @click="setPageTo('Ukoly')">Úkoly</li>
             <li class="app-section-link" @click="setPageTo('Lide')">Lidé</li>
+            <li class="app-section-link" @click="setPageTo('Prace')">Práce</li>
+            <li class="app-section-link" @click="setPageTo('Projekty')">Projekty</li>
+            <li class="app-section-link" @click="setPageTo('Zakaznici')">Zákazníci</li>
         </ul>
     </aside>
 
