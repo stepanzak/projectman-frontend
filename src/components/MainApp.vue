@@ -73,7 +73,6 @@ export default {
   grid-template-areas: 
     "page"
     "toolbar";
-  /* TODO: add three new components in .toolbar div. These will be similar to the components in .page div. */
 }
 
 .page-section {
@@ -93,25 +92,4 @@ export default {
   justify-content: flex-start;
   
 }
-
-/*styling toolbar buttons*/
-:deep(.toolbar .toolbar-button) {
-    margin: 0.2rem;
-    padding: 1rem;
-    border: 0.2rem solid black;
-    border-radius: 1rem;
-    background-color: var(--main-color-lighter);
-    cursor: pointer;
-    box-shadow: 0.1rem 0.1rem 0.3rem rgb(37, 37, 37);
-    user-select: none;
- }
-
- :deep(.toolbar .toolbar-button:hover) {
-  background-color: var(--main-color);
- }
-
- :deep(.toolbar .toolbar-button:active) {
-  box-shadow: none;
- }
-
 </style>
