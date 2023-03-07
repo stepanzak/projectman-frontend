@@ -1,6 +1,6 @@
 <template>
     <button class="toolbar-button" :title="tooltip">
-        <MyIcon></MyIcon>
+        <MyIcon v-if="icon" :size="IconSize"></MyIcon>
         <span v-if="text">{{ text }}</span>
     </button>
 </template>
@@ -8,7 +8,22 @@
 <script setup>
 import { defineAsyncComponent, defineProps } from "vue";
 
-const props = defineProps(['icon', 'size', 'tooltip', 'text'])
+const props = defineProps({
+    icon: {
+        type: String,
+    },
+    IconSize: {
+        type: Number,
+        default: 30,
+    },
+    tooltip: {
+        type: String,
+        required: true
+    },
+    text: {
+        type: String,
+    }
+})
 const MyIcon = defineAsyncComponent(function () {
   return import(`../../node_modules/vue-material-design-icons/${props.icon}.vue`);
 });
@@ -30,6 +45,10 @@ export default {
     cursor: pointer;
     box-shadow: 0.1rem 0.1rem 0.3rem rgb(37, 37, 37);
     user-select: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .toolbar-button:hover {

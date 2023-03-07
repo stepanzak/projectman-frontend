@@ -3,6 +3,7 @@
         <div class="toolbar-button">tlacitko</div>
         <div class="toolbar-button">tlacitko</div>
         <ToolbarButton icon="Plus"></ToolbarButton>
+        <ToolbarButton icon="Lightbulb" text="lide"></ToolbarButton>
     </div>
 </template>
 

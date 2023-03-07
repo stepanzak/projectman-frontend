@@ -2,12 +2,18 @@
     <div class="projekty-toolbar toolbar">
         <div class="toolbar-button">tlacitko</div>
         <div class="toolbar-button">tlacitko</div>
+        <ToolbarButton icon="Lightbulb" text="projekty"></ToolbarButton>
     </div>
 </template>
 
 <script>
+import ToolbarButton from '@/components/ToolbarButton.vue';
 export default {
-    name: "ProjektyToolbar"
+    name: "ProjektyToolbar",
+    components: {
+        ToolbarButton
+    }
+
 }
 </script>
  
