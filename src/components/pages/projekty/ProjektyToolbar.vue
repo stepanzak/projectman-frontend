@@ -2,7 +2,7 @@
     <div class="projekty-toolbar toolbar">
         <div class="toolbar-button">tlacitko</div>
         <div class="toolbar-button">tlacitko</div>
-        <ToolbarButton icon="Lightbulb" text="projekty"></ToolbarButton>
+        <ToolbarButton icon="Lightbulb" >projekty</ToolbarButton>
     </div>
 </template>
 

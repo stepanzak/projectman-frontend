@@ -1,28 +1,28 @@
 <template>
   <div class="main-app">
     <div class="page-section">
-      <NakladyPage v-if="currentPage === 'Naklady'" />
-      <UkolyPage v-if="currentPage === 'Ukoly'" />
-      <LidePage v-if="currentPage === 'Lide'" />
-      <PracePage v-if="currentPage === 'Prace'" />
-      <ProjektyPage v-if="currentPage === 'Projekty'" />
-      <ZakazniciPage v-if="currentPage === 'Zakaznici'" />
+      <NakladyPage v-if="currentPageStore.currentpage === 'Naklady'" />
+      <UkolyPage v-if="currentPageStore.currentpage === 'Ukoly'" />
+      <LidePage v-if="currentPageStore.currentpage === 'Lide'" />
+      <PracePage v-if="currentPageStore.currentpage === 'Prace'" />
+      <ProjektyPage v-if="currentPageStore.currentpage === 'Projekty'" />
+      <ZakazniciPage v-if="currentPageStore.currentpage === 'Zakaznici'" />
       
     </div>
 
     <div class="toolbar-section">
-      <NakladyToolbar v-if="currentPage === 'Naklady'" />
-      <UkolyToolbar v-if="currentPage === 'Ukoly'" />
-      <PraceToolbar v-if="currentPage === 'Prace'" />
-      <ProjektyToolbar v-if="currentPage === 'Projekty'" />
-      <ZakazniciToolbar v-if="currentPage === 'Zakaznici'" />
-      <LideToolbar v-if="currentPage === 'Lide'" />
+      <NakladyToolbar v-if="currentPageStore.currentpage === 'Naklady'" />
+      <UkolyToolbar v-if="currentPageStore.currentpage === 'Ukoly'" />
+      <PraceToolbar v-if="currentPageStore.currentpage === 'Prace'" />
+      <ProjektyToolbar v-if="currentPageStore.currentpage === 'Projekty'" />
+      <ZakazniciToolbar v-if="currentPageStore.currentpage === 'Zakaznici'" />
+      <LideToolbar v-if="currentPageStore.currentpage === 'Lide'" />
       
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import NakladyPage from '@/components/pages/naklady/NakladyPage.vue'
 import UkolyPage from '@/components/pages/ukoly/UkolyPage.vue'
 import LidePage from '@/components/pages/lide/LidePage.vue'
@@ -37,29 +37,8 @@ import ProjektyToolbar from '@/components/pages/projekty/ProjektyToolbar.vue'
 import ZakazniciToolbar from '@/components/pages/zakaznici/ZakazniciToolbar.vue'
 import LideToolbar from '@/components/pages/lide/LideToolbar.vue'
 
-
-export default {
-  name: "MainApp",
-  computed: {
-    currentPage() {
-      return this.$store.getters.getCurrentPage;
-    },
-  },
-  components: {
-    NakladyPage,
-    UkolyPage,
-    LidePage,
-    NakladyToolbar,
-    UkolyToolbar,
-    LideToolbar,
-    PracePage,
-    ProjektyPage,
-    ZakazniciPage,
-    PraceToolbar,
-    ProjektyToolbar,
-    ZakazniciToolbar
-  }
-};
+import { useCurrentPageStore } from '@/stores/CurrentPageStore'
+const currentPageStore = useCurrentPageStore()
 </script>
 
 <style scoped>

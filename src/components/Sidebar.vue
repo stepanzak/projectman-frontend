@@ -1,27 +1,20 @@
 <template>
     <aside class="sidebar">
         <ul class="app-sections-list">
-            <li class="app-section-link" @click="setPageTo('Naklady')">Náklady</li>
-            <li class="app-section-link" @click="setPageTo('Ukoly')">Úkoly</li>
-            <li class="app-section-link" @click="setPageTo('Lide')">Lidé</li>
-            <li class="app-section-link" @click="setPageTo('Prace')">Práce</li>
-            <li class="app-section-link" @click="setPageTo('Projekty')">Projekty</li>
-            <li class="app-section-link" @click="setPageTo('Zakaznici')">Zákazníci</li>
+            <li class="app-section-link" @click="currentPageStore.changePage('Naklady')">Náklady</li>
+            <li class="app-section-link" @click="currentPageStore.changePage('Ukoly')">Úkoly</li>
+            <li class="app-section-link" @click="currentPageStore.changePage('Lide')">Lidé</li>
+            <li class="app-section-link" @click="currentPageStore.changePage('Prace')">Práce</li>
+            <li class="app-section-link" @click="currentPageStore.changePage('Projekty')">Projekty</li>
+            <li class="app-section-link" @click="currentPageStore.changePage('Zakaznici')">Zákazníci</li>
         </ul>
     </aside>
 
 </template>
 
-<script>
-export default {
-    name: 'Sidebar',
-
-    methods: {
-        setPageTo: function (page) {
-            this.$store.commit('changePage', page)
-        }
-    }
-}
+<script setup>
+import { useCurrentPageStore } from '@/stores/CurrentPageStore'
+const currentPageStore = useCurrentPageStore()
 </script>
 
 <style>

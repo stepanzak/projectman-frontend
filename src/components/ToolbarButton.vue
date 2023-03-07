@@ -1,7 +1,7 @@
 <template>
     <button class="toolbar-button" :title="tooltip">
         <MyIcon v-if="icon" :size="IconSize"></MyIcon>
-        <span v-if="text">{{ text }}</span>
+        <slot />
     </button>
 </template>
 
@@ -19,9 +19,6 @@ const props = defineProps({
     tooltip: {
         type: String,
         required: true
-    },
-    text: {
-        type: String,
     }
 })
 const MyIcon = defineAsyncComponent(function () {

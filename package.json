@@ -9,10 +9,10 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^1.6.1",
+    "pinia": "^2.0.33",
     "vite": "^2.5.4",
     "vue": "^3.2.13",
-    "vue-material-design-icons": "^5.2.0",
-    "vuex": "^4.1.0"
+    "vue-material-design-icons": "^5.2.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
