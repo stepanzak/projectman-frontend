@@ -5,12 +5,13 @@
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^1.6.1",
+    "@vitejs/plugin-vue": "^4.0.0",
     "pinia": "^2.0.33",
-    "vite": "^2.5.4",
+    "vite": "^4.1.4",
     "vue": "^3.2.13",
     "vue-material-design-icons": "^5.2.0"
   },
@@ -21,7 +22,8 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "vue/setup-compiler-macros": true
     },
     "extends": [
       "plugin:vue/vue3-essential",

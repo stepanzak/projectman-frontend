@@ -2,18 +2,15 @@
     <div class="prace-toolbar toolbar">
         <div class="toolbar-button">tlacitko</div>
         <div class="toolbar-button">tlacitko</div>
-        <ToolbarButton icon="Lightbulb" text="prace"></ToolbarButton>
+        <ToolbarButton tooltip="lightbulb lol">
+            <Lightbulb></Lightbulb>
+        </ToolbarButton>
     </div>
 </template>
 
-<script>
+<script setup>
 import ToolbarButton from '@/components/ToolbarButton.vue'
-export default {
-    name: "PraceToolbar",
-    components: {
-        ToolbarButton
-    }
-}
+import Lightbulb from 'icons/Lightbulb.vue'
 </script>
  
 <style>
