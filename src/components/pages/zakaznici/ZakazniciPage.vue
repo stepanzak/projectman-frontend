@@ -21,7 +21,7 @@
         },
         methods: {
             async fetchData() {
-                const response = await fetch('http://localhost:8000/customer')
+                const response = await fetch('/customer')
                 this.customers = await response.json()}
         },
         mounted() {

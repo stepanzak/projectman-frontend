@@ -13,7 +13,6 @@ export const useCurrentPageStore = defineStore('currentpage', {
     actions: {
         changePage(page) {
             this.currentpage = page
-            console.log(this.currentpage)
         }
     }
 })
