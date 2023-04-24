@@ -1,10 +1,11 @@
 <template>
     <div>
         <ol>
-            <div v-if="!customers">Loading...</div>
+            <div v-if="!customersStore.lastFetch">Loading...</div>
             <div v-else>
                 <ol>
-                    <li v-for="customer in customers" :key="customer._id">{{ customer.name }}</li>
+                  <li v-for="customer in customersStore.getCustomers" :key="customer._id">{{ customer.name }}</li>
+                  {{ customersStore.getCustomers }}
                 </ol>
             </div>
         </ol>
@@ -12,20 +13,20 @@
 </template>
 
 <script>
+    import { useCustomersStore } from '@/stores/CustomersStore.js'
+    import { mapStores } from 'pinia'
+    console.log(useCustomersStore)
+    console.log(mapStores)
+
     export default {
         name: 'ZakazniciPage',
-        data() {
+        /*data() {
             return {
-                customers: null
+                //customers: null
             }
+        },*/
+        computed: {
+          ...mapStores(useCustomersStore)
         },
-        methods: {
-            async fetchData() {
-                const response = await fetch('/customer')
-                this.customers = await response.json()}
-        },
-        mounted() {
-            this.fetchData()
-        }
     }
 </script>
