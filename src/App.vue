@@ -1,7 +1,9 @@
 <template>
   <Navigation />
-  <Sidebar />
-  <MainApp />
+  <div class="app-and-sidebar">
+    <Sidebar />
+    <MainApp />
+  </div>
 </template>
 <script>
 import Navigation from '@/components/Navigation.vue'
@@ -20,9 +22,26 @@ export default {
 </script>
 
 <style>
+html {
+  height: 100vh;
+  width: 100vw
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
 #app {
-  padding-top: 70px;
+  height: 100%;
+  width: 100%;
+  /* padding-top: 70px; */
   margin: 0;
+}
+
+.app-and-sidebar {
+  height: calc(100% - 70px);
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-areas: "aside section";

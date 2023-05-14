@@ -1,6 +1,6 @@
 <template>
   <div class="main-app">
-    <div class="page-section">
+    <div class="page-section" autofocus >
       <NakladyPage v-if="currentPageStore.currentpage === 'Naklady'" />
       <UkolyPage v-if="currentPageStore.currentpage === 'Ukoly'" />
       <LidePage v-if="currentPageStore.currentpage === 'Lide'" />
@@ -44,31 +44,31 @@ const currentPageStore = useCurrentPageStore()
 <style scoped>
 .main-app {
   grid-area: section;
-  overflow: hidden;
-  height: 90vh;
-
   display: grid;
-  grid-template-rows: 7fr 1fr;
+  grid-template-rows: auto 6rem;
   grid-template-areas: 
     "page"
     "toolbar";
+    overflow: hidden;
 }
 
 .page-section {
   grid-area: page;
+  overflow-y: scroll;
 }
 
 .toolbar-section {
+  width: 100%;
+  background-color: var(--main-color-darker);
   grid-area: toolbar;
+  display: flex;
+  flex-direction: column;
 }
 
 /*General Toolbar styling*/
 .toolbar {
-  background-color: var(--main-color-darker);
   display: flex;
-  height: 100%;
   align-items: center;
   justify-content: flex-start;
-  
 }
 </style>

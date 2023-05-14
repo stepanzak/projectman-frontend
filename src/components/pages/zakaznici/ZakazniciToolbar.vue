@@ -10,7 +10,6 @@
             <label for="customer-name">Jméno nového zákazníka:</label>
             <input id="customer-name" type="string" v-model="name" />
             <input type="button" @click="hideNewCustomerDialog(), customersStore.addNewCustomer({name})" value="uložit">
-            {{ name }}
             <input type="button" @click="hideNewCustomerDialog" value="zrušit">
           </form>
         </dialog>

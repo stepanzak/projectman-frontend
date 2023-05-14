@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-
+const API = 'http://localhost:8000'
 export const useCustomersStore = defineStore('customers', {
     state: () => ({
         customers: [],
@@ -15,13 +15,13 @@ export const useCustomersStore = defineStore('customers', {
         }
     },
     actions: {
-        async fetchCustomers() {
-          console.log('can I fetch customers?')
+        async fetchCustomers(isForced) {
+          console.log('can I fetch customers?', this.lastFetch)
           const date = new Date
           const thisFetch = date.getTime()
-          if (thisFetch - this.lastFetch >= 10000) {
-            console.log('fetching customers')
-            const fetchedCustomers = await fetch('/customer')
+          if (isForced || thisFetch - this.lastFetch >= 10000) {
+            console.log(`fetching customers, forced: ${isForced}, thisFetch - this.lastFetch = ${thisFetch - this.lastFetch}`)
+            const fetchedCustomers = await fetch(`${API}/customer`)
             const newCustomers = await fetchedCustomers.json()
             if (newCustomers !== this.customers) {
               console.log(newCustomers, this.customers)
@@ -33,7 +33,7 @@ export const useCustomersStore = defineStore('customers', {
         },
         async addNewCustomer(customer) {
             try {
-                await fetch("/customer", {
+                await fetch(`${API}/customer`, {
                     method: "POST",
                     body: JSON.stringify(customer),
                     headers: {
@@ -45,7 +45,7 @@ export const useCustomersStore = defineStore('customers', {
                 alert('An error occured! Check the console for more info.')
                 return error
             }
-            this.customers.push(customer)
+          this.fetchCustomers(true)
         }
     }
 })

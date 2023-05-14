@@ -17,7 +17,6 @@ export default {
 
 <style>
 .site-navigation {
-    position: fixed;
     background-color: var(--main-color);
     top: 0;
     left: 0;
