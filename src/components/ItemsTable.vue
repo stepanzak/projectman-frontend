@@ -1,8 +1,8 @@
 <template>
   <div>
-    <table>
+    <table ref="itemsTable">
       <th v-for="(value, key) in props.items[0]">{{ key }}</th>
-      <tr v-for="item in props.items" :key="item._id" :itemid="item._id" @click="selectRow(item._id, $event)">
+      <tr v-for="item in props.items" :key="item._id"  @click="selectRow(item._id, $event)">
         <td v-for="value in item" :key="key">{{ value }}</td>
       </tr>
     </table>

@@ -1,11 +1,32 @@
 <template>
     <div>
-        <img src="https://cdn.vsassets.io/v/M214_20230105.3/_content/icon-social-facebook.svg" alt="fejsbuk">
+        <ol>
+            <div v-if="!workersStore.lastFetch">Loading...</div>
+            <div v-else>
+        <ItemsTable :items="workersStore.getWorkers" />
+            </div>
+        </ol>
+
     </div>
 </template>
 
 <script>
+    import { useWorkersStore } from '@/stores/WorkersStore.js'
+    import { mapStores } from 'pinia'
+
+    import ItemsTable from '@/components/ItemsTable.vue'
     export default {
-        name: 'LidePage'
+        name: 'ZakazniciPage',
+        /*data() {
+            return {
+                //workers: null
+            }
+        },*/
+        computed: {
+          ...mapStores(useWorkersStore)
+        },
+        components: {
+          ItemsTable
+        }
     }
 </script>
